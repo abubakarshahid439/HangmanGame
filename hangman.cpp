@@ -9,49 +9,6 @@ int wordLength(string& word);
 void playGame(const string& username);
 string chooseWord();
 void updateGameRecords(const string& username, bool won, int score);
-int main()
-{
-	srand(time(0));
-	do
-	{
-		cout << "Welcome to Hangman Game!\n";
-		cout << "1. Register\n";
-		cout << "2. Login\n";
-		cout << "3. Quit\n";
-		cout << "Enter your choice = ";
-		int choice;
-		cin >> choice;
-		cin.ignore();
-		if (choice == 1)
-		{
-			registerUser();
-		}
-		else if (choice == 2)
-		{
-			if (loginUser())
-			{
-				cout << "Login successful!\n";
-				string username;
-				getline(cin, username);
-				playGame(username);
-			}
-			else
-			{
-				cout << "Invalid username or password!\n";
-			}
-		}
-		else if (choice == 3)
-		{
-			cout << "\nThank you for playing Hangman!\n";
-			break;
-		}
-		else
-		{
-			cout << "Invalid choice. Please try again.\n";
-		}
-	} while (true);
-	return 0;
-}
 void registerUser()
 {
 	string username, password, fileUsername, filePassword;
